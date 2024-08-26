@@ -152,9 +152,6 @@ GROUP BY product_line
 ORDER BY avg_tax DESC;
 
 
--- Fetch each product line and add a column to those product 
--- line showing "Good", "Bad". Good if its greater than average sales
-
 SELECT 
 	AVG(quantity) AS avg_qnty
 FROM sales;
@@ -219,6 +216,7 @@ FROM sales
 GROUP BY customer_type
 ORDER BY count DESC;
 
+
 -- Which customer type buys the most?
 SELECT
 	customer_type,
@@ -235,6 +233,7 @@ FROM sales
 GROUP BY gender
 ORDER BY gender_cnt DESC;
 
+
 -- What is the gender distribution per branch?
 SELECT
 	gender,
@@ -243,8 +242,7 @@ FROM sales
 WHERE branch = "C"
 GROUP BY gender
 ORDER BY gender_cnt DESC;
--- Gender per branch is more or less the same hence, I don't think has
--- an effect of the sales per branch and other factors.
+
 
 -- Which time of the day do customers give most ratings?
 SELECT
@@ -253,8 +251,6 @@ SELECT
 FROM sales
 GROUP BY time_of_day
 ORDER BY avg_rating DESC;
--- Looks like time of the day does not really affect the rating, its
--- more or less the same rating each time of the day.alter
 
 
 -- Which time of the day do customers give most ratings per branch?
@@ -276,8 +272,6 @@ SELECT
 FROM sales
 GROUP BY day_name 
 ORDER BY avg_rating DESC;
--- Mon, Tue and Friday are the top best days for good ratings
--- why is that the case, how many sales are made on these days?
 
 
 
@@ -302,8 +296,7 @@ FROM sales
 WHERE day_name = "Sunday"
 GROUP BY time_of_day 
 ORDER BY total_sales DESC;
--- Evenings experience most sales, the stores are 
--- filled during the evening hours
+
 
 -- Which of the customer types brings the most revenue?
 SELECT
@@ -313,6 +306,7 @@ FROM sales
 GROUP BY customer_type
 ORDER BY total_revenue;
 
+
 -- Which city has the largest tax/VAT percent?
 SELECT
 	city,
@@ -320,6 +314,7 @@ SELECT
 FROM sales
 GROUP BY city 
 ORDER BY avg_tax_pct DESC;
+
 
 -- Which customer type pays the most in VAT?
 SELECT
