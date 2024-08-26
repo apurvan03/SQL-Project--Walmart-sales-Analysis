@@ -261,8 +261,6 @@ FROM sales
 WHERE branch = "A"
 GROUP BY time_of_day
 ORDER BY avg_rating DESC;
--- Branch A and C are doing well in ratings, branch B needs to do a 
--- little more to get better ratings.
 
 
 -- Which day fo the week has the best avg ratings?
